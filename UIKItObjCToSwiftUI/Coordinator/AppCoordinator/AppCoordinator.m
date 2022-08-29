@@ -6,6 +6,7 @@
 //
 
 #import "AppCoordinator.h"
+#import "UIKItObjCToSwiftUI-Swift.h"
 
 @interface AppCoordinator () <HomeViewModelCoordinatorDelegate>
 
@@ -31,8 +32,8 @@
 
 - (void)showLogin {
     LoginViewModel *viewModel = [[LoginViewModel alloc] init];
-    LoginViewController *viewController = [[LoginViewController alloc] initWithViewModel: viewModel];
-    [self.navigationController presentViewController: viewController animated: true completion: nil];
+    UIViewController *viewController = [[[SwiftUIInterface alloc] init] loginViewWithViewModel:viewModel];
+    [self.navigationController pushViewController: viewController animated: YES];
 }
 
 #pragma mark - HomeViewModelCoordinatorDelegate

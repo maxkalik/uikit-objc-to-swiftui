@@ -19,7 +19,12 @@
 }
 
 - (void) prepareViewModel {
-    NSLog(@"prepare view model %@", self.description);
+    self.title = @"Hello from Objective-C!";
+    self.buttonTitle = @"Sign In";
+}
+
+- (void)buttonTapped {
+    self.title = @"Updated";
 }
 
 @end

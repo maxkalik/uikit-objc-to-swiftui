@@ -10,7 +10,8 @@
 		112845FF28BBE97E007E5E18 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 112845FE28BBE97E007E5E18 /* AppCoordinator.m */; };
 		1128460828BBF263007E5E18 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128460728BBF263007E5E18 /* HomeViewModel.m */; };
 		1128460D28BBF370007E5E18 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128460C28BBF370007E5E18 /* LoginViewModel.m */; };
-		1128461028BBF386007E5E18 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128460F28BBF386007E5E18 /* LoginViewController.m */; };
+		116D768628BC192200A1DEBF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D768528BC192200A1DEBF /* LoginView.swift */; };
+		116D768928BC303F00A1DEBF /* SwiftUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D768828BC303F00A1DEBF /* SwiftUIInterface.swift */; };
 		118D85A428BBDE490053FE94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118D85A328BBDE490053FE94 /* AppDelegate.m */; };
 		118D85A728BBDE490053FE94 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118D85A628BBDE490053FE94 /* SceneDelegate.m */; };
 		118D85AA28BBDE490053FE94 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118D85A928BBDE490053FE94 /* HomeViewController.m */; };
@@ -27,8 +28,9 @@
 		1128460728BBF263007E5E18 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		1128460B28BBF370007E5E18 /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		1128460C28BBF370007E5E18 /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
-		1128460E28BBF386007E5E18 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		1128460F28BBF386007E5E18 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		116D768428BC192100A1DEBF /* UIKItObjCToSwiftUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKItObjCToSwiftUI-Bridging-Header.h"; sourceTree = "<group>"; };
+		116D768528BC192200A1DEBF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../../../../../UIKitObjCToSwiftUI/UIKItObjCToSwiftUI/Modules/Login/Views/LoginView.swift; sourceTree = "<group>"; };
+		116D768828BC303F00A1DEBF /* SwiftUIInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUIInterface.swift; path = ../../../UIKitObjCToSwiftUI/UIKItObjCToSwiftUI/SwiftUI/SwiftUIInterface.swift; sourceTree = "<group>"; };
 		118D859F28BBDE490053FE94 /* UIKItObjCToSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKItObjCToSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118D85A228BBDE490053FE94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		118D85A328BBDE490053FE94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -119,8 +121,8 @@
 		1128460928BBF351007E5E18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1128460E28BBF386007E5E18 /* LoginViewController.h */,
-				1128460F28BBF386007E5E18 /* LoginViewController.m */,
+				116D768528BC192200A1DEBF /* LoginView.swift */,
+				116D768428BC192100A1DEBF /* UIKItObjCToSwiftUI-Bridging-Header.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +134,14 @@
 				1128460C28BBF370007E5E18 /* LoginViewModel.m */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		116D768728BC302B00A1DEBF /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				116D768828BC303F00A1DEBF /* SwiftUIInterface.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		118D859628BBDE490053FE94 = {
@@ -153,6 +163,7 @@
 		118D85A128BBDE490053FE94 /* UIKItObjCToSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				116D768728BC302B00A1DEBF /* SwiftUI */,
 				1128460228BBED68007E5E18 /* Modules */,
 				112845F928BBE514007E5E18 /* Coordinator */,
 				118D85BB28BBDE550053FE94 /* SupportingFiles */,
@@ -206,6 +217,7 @@
 				TargetAttributes = {
 					118D859E28BBDE490053FE94 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -247,11 +259,12 @@
 				118D85AA28BBDE490053FE94 /* HomeViewController.m in Sources */,
 				118D85A428BBDE490053FE94 /* AppDelegate.m in Sources */,
 				112845FF28BBE97E007E5E18 /* AppCoordinator.m in Sources */,
+				116D768628BC192200A1DEBF /* LoginView.swift in Sources */,
 				1128460828BBF263007E5E18 /* HomeViewModel.m in Sources */,
+				116D768928BC303F00A1DEBF /* SwiftUIInterface.swift in Sources */,
 				1128460D28BBF370007E5E18 /* LoginViewModel.m in Sources */,
 				118D85B528BBDE490053FE94 /* main.m in Sources */,
 				118D85A728BBDE490053FE94 /* SceneDelegate.m in Sources */,
-				1128461028BBF386007E5E18 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3W5448YAM;
@@ -401,6 +415,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxkalik.UIKItObjCToSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIKItObjCToSwiftUI/Modules/Login/Views/UIKItObjCToSwiftUI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -410,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3W5448YAM;
@@ -427,6 +445,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxkalik.UIKItObjCToSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIKItObjCToSwiftUI/Modules/Login/Views/UIKItObjCToSwiftUI-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
