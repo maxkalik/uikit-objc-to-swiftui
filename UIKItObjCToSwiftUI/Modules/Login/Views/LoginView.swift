@@ -19,6 +19,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Text(observed.viewModel.title)
+            TextField("Enter your name", text: $observed.viewModel.name)
             Button {
                 self.observed.viewModel.buttonTapped()
             } label: {

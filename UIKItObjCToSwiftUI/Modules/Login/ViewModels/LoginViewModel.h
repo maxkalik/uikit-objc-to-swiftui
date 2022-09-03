@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginViewModel : NSObject <ObservableNSObject>
 
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *buttonTitle;
 

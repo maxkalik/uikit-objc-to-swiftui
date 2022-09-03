@@ -7,6 +7,12 @@
 
 #import "LoginViewModel.h"
 
+@interface LoginViewModel ()
+
+- (void)prepareTitleWithName:(NSString *)name;
+
+@end
+
 @implementation LoginViewModel
 
 @synthesize observedViewModelDelegate;
@@ -25,8 +31,20 @@
 }
 
 - (void) prepareViewModel {
-    self.title = @"Hello from Objective-C!";
+    [self prepareTitleWithName:@""];
     self.buttonTitle = @"Sign In";
+}
+
+- (void)prepareTitleWithName:(NSString *)name {
+    self.title = [NSString stringWithFormat:@"Hello, %@", name];
+}
+
+-(void)setName:(NSString *)name {
+    if (_name != name) {
+        _name = name;
+        [self prepareTitleWithName:name];
+        [self.observedViewModelDelegate viewModelDidUpdate:self];
+    }
 }
 
 - (void)buttonTapped {
