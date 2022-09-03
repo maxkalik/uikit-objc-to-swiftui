@@ -30,6 +30,7 @@
 		1128460C28BBF370007E5E18 /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		112FE2A328C37FB100D54DF8 /* SwiftUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIInterface.swift; sourceTree = "<group>"; };
 		112FE2A528C37FD100D54DF8 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		112FE2AA28C3A14600D54DF8 /* ObservableNSObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObservableNSObject.h; sourceTree = "<group>"; };
 		116D768428BC192100A1DEBF /* UIKItObjCToSwiftUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKItObjCToSwiftUI-Bridging-Header.h"; sourceTree = "<group>"; };
 		118D859F28BBDE490053FE94 /* UIKItObjCToSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKItObjCToSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118D85A228BBDE490053FE94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,15 +56,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		112845F928BBE514007E5E18 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				1128460028BBEB59007E5E18 /* AppCoordinator */,
-				112845FA28BBE74D007E5E18 /* Coordinator.h */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		1128460028BBEB59007E5E18 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +128,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		112FE2A728C3A0DB00D54DF8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				112845FA28BBE74D007E5E18 /* Coordinator.h */,
+				112FE2AA28C3A14600D54DF8 /* ObservableNSObject.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		116D768728BC302B00A1DEBF /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +164,10 @@
 		118D85A128BBDE490053FE94 /* UIKItObjCToSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1128460028BBEB59007E5E18 /* AppCoordinator */,
+				112FE2A728C3A0DB00D54DF8 /* Protocols */,
 				116D768728BC302B00A1DEBF /* SwiftUI */,
 				1128460228BBED68007E5E18 /* Modules */,
-				112845F928BBE514007E5E18 /* Coordinator */,
 				118D85BB28BBDE550053FE94 /* SupportingFiles */,
 				118D85AE28BBDE490053FE94 /* Assets.xcassets */,
 				118D85B028BBDE490053FE94 /* LaunchScreen.storyboard */,

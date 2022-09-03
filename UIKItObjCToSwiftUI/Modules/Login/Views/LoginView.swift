@@ -9,23 +9,19 @@ import SwiftUI
 
 struct LoginView: View {
     
-    var viewModel: LoginViewModel
-    
-    @State var title: String = ""
-    
-    init(viewModel: LoginViewModel) {
-        self.title = viewModel.title
-        self.viewModel = viewModel
+    @ObservedObject var swiftUIViewModel: SwiftUIViewModel
+
+    init(viewModel: SwiftUIViewModel) {
+        self.swiftUIViewModel = viewModel
     }
     
     var body: some View {
         VStack {
-            Text(title)
+            Text(swiftUIViewModel.viewModel.title)
             Button {
-                self.viewModel.buttonTapped()
-                self.title = viewModel.title
+                self.swiftUIViewModel.viewModel.buttonTapped()
             } label: {
-                Text(self.viewModel.buttonTitle)
+                Text(self.swiftUIViewModel.viewModel.buttonTitle)
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(Color.white)
                     .padding()
@@ -38,6 +34,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel())
+        LoginView(viewModel: SwiftUIViewModel(viewModel: LoginViewModel()))
     }
 }

@@ -9,6 +9,8 @@
 
 @implementation LoginViewModel
 
+@synthesize observedViewModelDelegate;
+
 - (instancetype) init {
     self = [super init];
     if (!self) return nil;
@@ -18,13 +20,22 @@
     return self;
 }
 
+- (void)dealloc {
+    NSLog(@"dealloc %@", self.description);
+}
+
 - (void) prepareViewModel {
     self.title = @"Hello from Objective-C!";
     self.buttonTitle = @"Sign In";
 }
 
 - (void)buttonTapped {
-    self.title = @"Updated";
+    [self setTitle:@"Update"];
+
+    // Update view model
+    [self.observedViewModelDelegate viewModelDidUpdate:self];
 }
+
+
 
 @end
