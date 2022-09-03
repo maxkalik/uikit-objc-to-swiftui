@@ -9,19 +9,20 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @ObservedObject var swiftUIViewModel: SwiftUIViewModel
+    typealias ViewModel = SwiftUIViewModelInterface<LoginViewModel>
+    @ObservedObject var observed: ViewModel
 
-    init(viewModel: SwiftUIViewModel) {
-        self.swiftUIViewModel = viewModel
+    init(viewModelInterface: ViewModel) {
+        self.observed = viewModelInterface
     }
     
     var body: some View {
         VStack {
-            Text(swiftUIViewModel.viewModel.title)
+            Text(observed.viewModel.title)
             Button {
-                self.swiftUIViewModel.viewModel.buttonTapped()
+                self.observed.viewModel.buttonTapped()
             } label: {
-                Text(self.swiftUIViewModel.viewModel.buttonTitle)
+                Text(self.observed.viewModel.buttonTitle)
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(Color.white)
                     .padding()
@@ -29,11 +30,5 @@ struct LoginView: View {
             .background(Color.green)
             .cornerRadius(10)
         }
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(viewModel: SwiftUIViewModel(viewModel: LoginViewModel()))
     }
 }

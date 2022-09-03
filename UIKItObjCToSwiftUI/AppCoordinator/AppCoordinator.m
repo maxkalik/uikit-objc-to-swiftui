@@ -32,7 +32,7 @@
 
 - (void)showLogin {
     LoginViewModel *viewModel = [[LoginViewModel alloc] init];
-    UIViewController *viewController = [[[SwiftUIInterface alloc] init] loginViewWithViewModel:viewModel];
+    UIViewController *viewController = [[[SwiftUICoordinatorInterface alloc] init] loginViewWithViewModel:viewModel];
     [self.navigationController pushViewController: viewController animated: YES];
 }
 

@@ -30,12 +30,10 @@
 }
 
 - (void)buttonTapped {
-    [self setTitle:@"Update"];
+    [self setTitle:@"Signed in"];
 
     // Update view model
     [self.observedViewModelDelegate viewModelDidUpdate:self];
 }
-
-
 
 @end
