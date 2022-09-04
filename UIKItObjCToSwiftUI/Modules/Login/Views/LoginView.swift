@@ -20,6 +20,8 @@ struct LoginView: View {
         VStack {
             Text(observed.viewModel.title)
             TextField("Enter your name", text: $observed.viewModel.name)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 40)
             Button {
                 self.observed.viewModel.buttonTapped()
             } label: {
@@ -30,6 +32,7 @@ struct LoginView: View {
             }
             .background(Color.green)
             .cornerRadius(10)
+            .padding(.top, 20)
         }
     }
 }

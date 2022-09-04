@@ -36,7 +36,11 @@
 }
 
 - (void)prepareTitleWithName:(NSString *)name {
-    self.title = [NSString stringWithFormat:@"Hello, %@", name];
+    if ([name length] != 0) {
+        self.title = [NSString stringWithFormat:@"Hello, %@!", name];
+    } else {
+        self.title = @"Hello!";
+    }
 }
 
 -(void)setName:(NSString *)name {
